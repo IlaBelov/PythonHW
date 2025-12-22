@@ -17,16 +17,9 @@ login_button.click()
 
 sleep(2)
 
-try:
-    success_message = driver.find_element(By.ID, "flash")
-    message_text = success_message.text
+success_message = driver.find_element(By.ID, "flash")
+message_text = success_message.text
 
-    print("=" * 40)
-    print("Текст с зеленой плашки:")
-    print(message_text)
-    print("=" * 40)
-
-except Exception as e:
-    print(f"Ошибка при получении текста: {e}")
+print(message_text)
 
 driver.quit()
