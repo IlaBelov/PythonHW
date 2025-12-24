@@ -14,6 +14,9 @@ driver.get("https://bonigarcia.dev/selenium-webdriver-java/loading-images.html"
 waiter.until(lambda d: len(d.find_elements
                            (By.CSS_SELECTOR, "#image-container img")) >= 4)
 
-print(driver.find_element(By.ID, "award").get_attribute("src"))
+images = driver.find_elements(By.TAG_NAME, "img")
+third_image = images[2]
+src = third_image.get_attribute("src")
+print(src)
 
 driver.quit()
